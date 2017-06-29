@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belt exam</title>
+	  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+	
+	<div>
+	<h3 id="welcome">Welcome, {{user.firstname}}!</h3><a id="addbook" href="/logout">Logout</a>
+	<p> 
+	{%for i in userpokes%}
+	{{i.total}}
+	{%endfor%}
+	people poked you!</p>
+	</div>
+	<div id="inner">
+	{%for i in listpokes%}
+		<p>{{i.firstname}} poked you  {{i.total}} times.</p>
+	{%endfor%}
+	</div>
+	
+
+	<div id="rev">
+
+
+
+		<h3>People you may want to poke:</h3>
+	<table>
+		<tr style="background-color:#ccc;">
+			<th>Name</th>
+			<th>Alias</th>
+			<th>Email Address</th>
+			<th>Poke history</th>
+			<th>Action</th>
+		</tr>
+		{%for i in allpokes%}
+			{%if i.id != user.id%}
+			<tr>
+				<td>
+				{{i.firstname}}
+				</td>
+				<td>
+				{{i.alias}}
+				</td>
+				<td>
+				{{i.email}}
+				</td>
+				<td>
+				{{i.total}}
+				</td>
+				<td>
+				<a href="/addpoke/{{i.id}}"><button>Poke!</button></a>
+				</td>
+			</tr>
+			{%endif%}
+		{%endfor%}
+		</table>
+
+
+
+
+
+
+
+	</div>
+
+
+
+</body>
+</html>

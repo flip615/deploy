@@ -1,3 +1,15 @@
+table {
+    width: 100%;
+    border: 1px solid black;
+}
+table, th,td {
+    border: 1px solid black;
+}
+
+
+
+
+
 input{
 	display: block;
 }
@@ -41,15 +53,39 @@ input{
 }
 
 #inner{
-	height: 230px;
-	width: 270px;
-	display: inline-block;
-/*	background: red;*/
+	height: 150px;
+	width: 300px;
+/*	display: inline-block;*/
+/*	background: grey;*/
 	vertical-align: top;
 	overflow: scroll;
 	margin-left: 30px;
 	border: 1px solid;
 	padding: 10px;
 }
+button{
+	border-radius: 0px;
+	background: grey;
+}
+
+#register{
+	border: 1px solid;
+	width: 250px;
+	display: inline-block;
+	padding: 30px;
+}
+
+#login{
+	border: 1px solid;
+	width: 250px;
+	padding: 30px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left:30px;
+}
+tr:nth-of-type(odd) {
+      background-color:#F1F4F8;
+    }
+
 
 
